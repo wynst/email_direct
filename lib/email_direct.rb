@@ -1,0 +1,3 @@
+module EmailDirect
+  # Your code goes here...
+end
