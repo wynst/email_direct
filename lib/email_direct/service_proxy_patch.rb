@@ -11,9 +11,7 @@ module EmailDirect
     end
 
     # same as original method, with:
-    # 1) add xml.instruct!
-    # 2) replace xml.env to xml.soap
-    # 3) inject options hash directly
+    # 1) inject options hash directly
     def soap_envelope(options, &block)
       xsd = 'http://www.w3.org/2001/XMLSchema'
       env = 'http://schemas.xmlsoap.org/soap/envelope/'
@@ -21,7 +19,6 @@ module EmailDirect
       data = options.clone
       data.delete(:method)
       data = options.to_xml(:skip_instruct => true).gsub("<hash>\n",'').gsub("\n</hash>",'')
-      p data
       xml = Builder::XmlMarkup.new
       xml.env(:Envelope, 'xmlns:xsd' => xsd, 'xmlns:env' => env, 'xmlns:xsi' => xsi) do
         xml.env(:Body) do
