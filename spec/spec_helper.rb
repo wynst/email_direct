@@ -1,0 +1,2 @@
+Bundler.require(:default, :development)
+
