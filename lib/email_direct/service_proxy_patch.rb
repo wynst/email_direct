@@ -18,7 +18,7 @@ module EmailDirect
       xsi = 'http://www.w3.org/2001/XMLSchema-instance'
       data = options.clone
       data.delete(:method)
-      data = options.to_xml(:skip_instruct => true).gsub("<hash>\n",'').gsub("\n</hash>",'')
+      data = data.to_xml(:skip_instruct => true).gsub("<hash>\n",'').gsub("</hash>\n",'')
       xml = Builder::XmlMarkup.new
       xml.env(:Envelope, 'xmlns:xsd' => xsd, 'xmlns:env' => env, 'xmlns:xsi' => xsi) do
         xml.env(:Body) do

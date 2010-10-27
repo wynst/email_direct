@@ -15,9 +15,6 @@ describe EmailDirect::Response, "#initialize" do
     end
   end
 
-  describe "An invalid authentication error in soap response with Source_GetAll" do
-  end
-
   describe "A valid element List with Source_GetAll" do
     before do
       xml =<<XML

@@ -37,3 +37,17 @@ describe EmailDirect::SOAP, "#source" do
   end
 end
 
+describe "An invalid authentication error in soap response with Source_GetAll" do
+  before do
+    @soap = EmailDirect::SOAP.new('invalid', 'password')
+    @soap.debug = true
+  end
+
+  it "fails gracefully" do
+    result = @soap.Source_GetAll()
+    result.success?.should == false
+    result.code.should     == 10
+    result.message.should  == "Invalid AccountName or Password."
+  end
+end
+
