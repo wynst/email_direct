@@ -10,9 +10,16 @@ describe EmailDirect::SOAP, "#source_add" do
   end
   it "interacts with source" do
     #create new source
-    element_name = 'RubyTestSource'
+    element_name = 'RubyTestSource2'
     description  = 'a test source item'
     result = @soap.Source_Add("ElementName" => "RubyTestSource", "Description" => 'a test source item')
+    result.success?.should == true
+
+    #find the added item
+    result = @soap.Source_GetAll()
+
+
+    result = @soap.Source_Delete()
 #    ap result
 #    result.code.should == '201'
 #    result.description.should == 'blabla'
