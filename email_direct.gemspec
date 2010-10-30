@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "email_direct"
   s.version     = EmailDirect::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Tucker Connelly", "wynst"]
+  s.email       = ["l4nc3r@comcast.net", "wynst.uei@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/email_direct"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Used to connect to the EmailDirect SOAP service.}
+  s.description = %q{To use this gem, initialize with your account name and password.  All the SOAP calls (found here: http://dev.emaildirect.com/v1/) are functions of the module with the same function name and parameters (minus the credentials).  This gem depends on the serviceproxy and activesupport gems.}
 
   s.rubyforge_project = "email_direct"
 
